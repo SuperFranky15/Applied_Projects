@@ -1,0 +1,34 @@
+Pattern data generation reference: datascience_research/studies_advertising/ucla_2023_semester1_ads.py
+
+
+File: ucla_study_ads_and_total_units.csv
+Description: advertising and sales data by ASIN, by country, by day for 2022.
+
+ASIN: VARCHAR Amazon sales identification number. Similar to a SKU or UPC.
+VENDOR_ID: INTEGER Brand identification internal to Pattern
+COUNTRY_CODE: VARCHAR Code of country of sale. E.g., US = United States. Full dictionary for codes can be provided if needed.
+ORDERING_REGION: VARCHAR Code of region of shared inventory. E.g., EU = European Union, as inventory held in Germany can be sold in France.
+DATE: DATE Date of sale OR date of click. Most sales for a click occur on the day of the click, but there can be a delay. E.g., an attributed sale, but no total sales that day.
+TOTAL_REV: FLOAT Total revenue of units sold for that ASIN, country_code, date.
+TOTAL_UNITS: INTEGER Total units sold for that ASIN, country_code, date.
+ATTR_REV: FLOAT Revenue that came as a consequence of clicking on an Ad as claimed by Amazon. Major caveats here: 1) if a customer clicks on your ad and buys ANY product from your company that unit / revenue will be counted as part of attribution. 2) Attribution continues for 7 days. 3) If a customer clicks an ad and would have purchased your product anyway (e.g., ad is shown in first slot and identical listing with same product is shown organically in second slot).
+ATTR_UNITS: INTEGER Same description as ATTR_REV but units sold.
+
+
+
+File: ucla_study_selected_organic_rank_ads.csv
+Description: Advertising performance and organic rank on page for both product and best rank by brand for select products and brands that are part of the Destiny AI advertising system. Destiny AI is a proprietary Pattern technology that optimizes advertising performance for both incremental sales and long-term product success, or "Destiny". Data only for certain brands and products and this data only includes US.
+
+COUNTRY_CODE: VARCHAR Code of country of advertising and/or search placement. 
+BRAND_ID: INTEGER Brand identification internal to Pattern.
+KEYWORD: VARCHAR Keyword advertised on and/or search placement.
+DATE: DATE Date of click for advertising (not necessarily sale) and date of search placement.
+PARENT_ASIN: VARCHAR Roll up of various ASINs to parent product. E.g., same socks but different colors and sizes. If parent asin not exist, then the parent ASIN will repeat the ASIN.
+ASIN: VARCHAR Amazon sales identification number. Similar to a SKU or UPC.
+OVERALL_RANK_ORGANIC: Integer. Organic placement on search page by Amazon. E.g., 3 will be the third organic slot on the page. Because of the high number of ads on Amazon this could be down the page, especially if it's not in the top 4. If NULL then either not scraped or product not ranked. (See SERP_SCRAPED)
+MIN_BRAND_RANK: Integer. Best organic ranking by any product from the brand on the keywords.
+MIN_PARENT_RANK: Integer. Best organic ranking by any sibling ASIN from the parent_asin on the keywords.
+IMPRESSIONS: Integer. The number of times your ad was served somewhere on the search page in a day.
+CLICK: Integer. The number of clicks your ad received on the search page in a day.
+CONVERSIONS: Integer. The number of times one of your products was purchased within 7 days of clicking on an ad.
+SERP_SCRAPED: Boolean. Was overall_rank_organic scraped on that day?

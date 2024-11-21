@@ -1,2 +1,2 @@
-# Applied_Projects
-Work samples which generate useful business insights
+# Work Samples
+Work samples in previous professional experiences which generated useful business insights 

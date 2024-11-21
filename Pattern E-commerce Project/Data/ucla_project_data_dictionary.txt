@@ -1,7 +1,4 @@
-Pattern data generation reference: datascience_research/studies_advertising/ucla_2023_semester1_ads.py
-
-
-File: ucla_study_ads_and_total_units.csv
+File: ads_and_total_units.csv
 Description: advertising and sales data by ASIN, by country, by day for 2022.
 
 ASIN: VARCHAR Amazon sales identification number. Similar to a SKU or UPC.
@@ -16,7 +13,7 @@ ATTR_UNITS: INTEGER Same description as ATTR_REV but units sold.
 
 
 
-File: ucla_study_selected_organic_rank_ads.csv
+File: selected_organic_rank_ads.csv
 Description: Advertising performance and organic rank on page for both product and best rank by brand for select products and brands that are part of the Destiny AI advertising system. Destiny AI is a proprietary Pattern technology that optimizes advertising performance for both incremental sales and long-term product success, or "Destiny". Data only for certain brands and products and this data only includes US.
 
 COUNTRY_CODE: VARCHAR Code of country of advertising and/or search placement. 
@@ -31,4 +28,4 @@ MIN_PARENT_RANK: Integer. Best organic ranking by any sibling ASIN from the pare
 IMPRESSIONS: Integer. The number of times your ad was served somewhere on the search page in a day.
 CLICK: Integer. The number of clicks your ad received on the search page in a day.
 CONVERSIONS: Integer. The number of times one of your products was purchased within 7 days of clicking on an ad.
-SERP_SCRAPED: Boolean. Was overall_rank_organic scraped on that day?
+SERP_SCRAPED: Boolean. Was overall_rank_organic scraped on that day
